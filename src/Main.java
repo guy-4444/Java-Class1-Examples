@@ -4,8 +4,10 @@ public class Main {
 
 
     public static void main(String[] args) {
-        Exercise1.time();
+        Exercise2.start();
 
 
     }
+
+
 }
