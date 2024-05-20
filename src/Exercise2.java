@@ -6,27 +6,21 @@ public class Exercise2 {
     public static void start() {
 
         Car c1 = new Car();
-        c1.model = "Toyota";
-        c1.km = 20000;
-        c1.price = 12000;
-        c1.isAutomatic = false;
-        c1.isRegistered = true;
-        c1.phone = "+972521234567";
-        c1.createdAt = new Date(1999, 1, 1);
+        c1.setModel("Toyota");
+        c1.setKm(20000);
+        c1.setCreatedAt(new Date(1999, 1, 1));
 
         Car c2 = new Car();
-        c2.model = "Mercedes";
-        c2.km = 200030;
-        c2.price = 123000;
-        c2.isAutomatic = true;
-        c2.isRegistered = true;
-        c2.phone = "+97252111167";
-        c2.createdAt = new Date(2020, 1, 1);
-
+        c2.setModel("Mitsubishi");
+        c2.setKm(20000);
+        c2.setCreatedAt(new Date(2020, 1, 1));
 
         Car[] cars = new Car[] {c1, c2};
 
+        printCars(cars);
+        System.out.println("- - - - - - ");
         validateCars(cars);
+        System.out.println("- - - - - - ");
 
 
 
@@ -41,11 +35,19 @@ public class Exercise2 {
 
     }
 
+
+
+    private static void printCars(Car[] cars) {
+        for (int i = 0; i < cars.length; i++) {
+            System.out.println((i + 1) + ". " + cars[i].toString());
+        }
+    }
+
     private static void validateCars(Car[] cars) {
 
         for (int i = 0; i < cars.length; i++) {
-            if (cars[i].isRegistered == false) {
-                callOwner(cars[i].phone);
+            if (cars[i].isRegistered() == false) {
+                callOwner(cars[i].getPhone());
             }
         }
 
