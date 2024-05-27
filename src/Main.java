@@ -4,7 +4,8 @@ public class Main {
 
 
     public static void main(String[] args) {
-        Exercise2.start();
+        Exercise3.start();
+
 
 
     }

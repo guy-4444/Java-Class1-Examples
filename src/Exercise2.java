@@ -25,13 +25,6 @@ public class Exercise2 {
 
 
 
-        Date dt = new Date(2300, 05, 20);
-        System.out.println("A: " + dt.toString());
-        dt.setY(2025);
-        System.out.println("B: " + dt.toString());
-        dt.setY(2020);
-        System.out.println("C: " + dt.toString());
-        System.out.println("The year: " + dt.getY());
 
     }
 

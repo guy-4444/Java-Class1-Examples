@@ -76,7 +76,6 @@ public class Car {
 
     // toString
 
-
     @Override
     public String toString() {
         return model + " " + createdAt.toString();
