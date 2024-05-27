@@ -78,6 +78,6 @@ public class Car {
 
     @Override
     public String toString() {
-        return model + " " + createdAt.toString();
+        return "\n  - " + model + " km: " + km + ", " + createdAt.toString();
     }
 }

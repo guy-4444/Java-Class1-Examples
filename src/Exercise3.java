@@ -29,8 +29,9 @@ public class Exercise3 {
 
         Car c5 = new Car();
         c5.setModel("Tesla");
-        c5.setKm(20640);
+        c5.setKm(100000);
         c5.setCreatedAt(new Date(2010, 1, 1));
+
 
         garage.addCar(c1);
         garage.addCar(c2);
@@ -39,6 +40,16 @@ public class Exercise3 {
         garage.addCar(c5);
 
         System.out.println(garage);
+
+        // Homework..
+        garage.cloneCar(c5);
+
+        System.out.println(garage);
+
+        c5.setKm(200000);
+
+        System.out.println(garage);
+
 
 
         // add car

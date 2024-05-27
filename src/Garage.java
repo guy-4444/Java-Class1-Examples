@@ -84,9 +84,17 @@ public class Garage {
         return true;
     }
 
+    public void cloneCar(Car car) {
+        // add to cars the copy of the car
+
+//        Car clone = //copy;
+//        addCar(car);
+    }
+
+
     @Override
     public String toString() {
-        return "name: " + name +
+        return "\nname: " + name +
                 "\nsize: " + size +
                 "\ncars=" + Arrays.toString(cars)
                 ;
