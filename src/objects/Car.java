@@ -1,3 +1,5 @@
+package objects;
+
 public class Car {
 
     private String model;
@@ -8,8 +10,19 @@ public class Car {
     private boolean isRegistered;
     private Date createdAt;
 
-    public Car() { }
+    public Car() {
+    }
 
+    public Car(Car another) {
+        this.model = another.model;
+        this.km = another.km;
+        this.phone = another.phone;
+        this.price = another.price;
+        this.isAutomatic = another.isAutomatic;
+        this.isRegistered = another.isRegistered;
+        Date newDate = new Date(another.createdAt);
+        this.createdAt = newDate;
+    }
     // getters
 
     public String getModel() {

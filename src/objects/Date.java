@@ -1,9 +1,17 @@
+package objects;
+
 public class Date {
 
     private int MAX_YEAR = 2024;
     private int y;
     private int m;
     private int d;
+
+    public Date(Date another) {
+        this.y = another.y;
+        this.m = another.m;
+        this.d = another.d;
+    }
 
     public Date(int y, int m, int d) {
         setY(y);

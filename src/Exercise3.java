@@ -1,3 +1,7 @@
+import objects.Car;
+import objects.Date;
+import objects.Garage;
+
 public class Exercise3 {
 
     // guyi3@mail.afeka.ac.il
@@ -43,22 +47,21 @@ public class Exercise3 {
         System.out.println(garage);
 
         // Homework..
-        garage.cloneCar(c5);
+        garage.addCar(new Car(c5));
 
         System.out.println(garage);
 
         c5.setKm(200000);
+        c5.getCreatedAt().setY(2024);
+        c5.getCreatedAt().setM(06);
+        c5.getCreatedAt().setD(03);
 
         System.out.println(garage);
-
-
 
         // add car
 
         // get car by index
 
         // get number of cars
-
-
     }
 }

@@ -1,3 +1,5 @@
+package objects;
+
 import java.util.Arrays;
 
 public class Garage {
@@ -85,9 +87,10 @@ public class Garage {
     }
 
     public void cloneCar(Car car) {
+
         // add to cars the copy of the car
 
-//        Car clone = //copy;
+//        objects.Car clone = //copy;
 //        addCar(car);
     }
 
