@@ -18,11 +18,15 @@ public class Order {
         toys = new Toy[0];
     }
 
-    private void addToy(Toy toy, int amount) {
+    public void addToy(Toy toy) {
         validateToysArraySize();
 
-        toys[size] = new Toy(toy, amount);
+        toys[size] = toy;
         size++;
+    }
+
+    public Toy[] getToys() {
+        return toys;
     }
 
     private void validateToysArraySize() {
@@ -42,6 +46,16 @@ public class Order {
         toys = temp;
     }
 
+    public double getTotalPrice() {
+        double sum = 0;
+        for (int i = 0; i < size; i++) {
+            Toy toy = toys[i];
+            sum += toy.getPrice();
+        }
+
+        return sum;
+    }
+
     @Override
     public String toString() {
         String toysStr = "";
@@ -54,7 +68,8 @@ public class Order {
                 "date=" + date +
                 ", client=" + client +
                 ", toys=" + toysStr +
-                ", size=" + size +
+                "\n, size=" + size +
+                ", total price=" + getTotalPrice() +
                 '}';
     }
 }

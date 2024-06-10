@@ -6,6 +6,12 @@ import java.util.Arrays;
 
 public class ToysManager {
 
+    public static double PHI = 1.618;
+
+    public static void printPhi() {
+
+    }
+
     private Toy[] ALL_TOYS;
     private Client[] ALL_CLIENTS;
     private Order[] ALL_ORDERS;
@@ -20,10 +26,10 @@ public class ToysManager {
         ALL_ORDERS = new Order[0];
     }
 
-    public void addNewToy(String toyName, double toyPrice) {
+    public void addNewToy(String toyName, double toyPrice, int stock) {
         validateToysArraySize();
 
-        Toy newToy = new Toy(toyName, toyPrice);
+        Toy newToy = new Toy(toyName, toyPrice, stock);
         ALL_TOYS[toysSize] = newToy;
         toysSize++;
     }
@@ -121,11 +127,33 @@ public class ToysManager {
         return null;
     }
 
-    public void addToyToOrder(int orderIndex, String toyName, int toyAmount) {
-
+    public void addToyToOrder(int orderIndex, String toyName) {
         // get toy by his name
+        Toy toyOnTheShelf = null;
+        for (int i = 0; i < ALL_TOYS.length; i++) {
+            if (ALL_TOYS[i].getName().equals(toyName)) {
+                toyOnTheShelf = ALL_TOYS[i];
+                break;
+            }
+        }
 
-        //
+        if (toyOnTheShelf == null) {
+            return;
+        }
 
+
+        Toy toyInMyOrder = new Toy(toyOnTheShelf);
+        if (toyOnTheShelf.getStock() >= 1) {
+            ALL_ORDERS[orderIndex].addToy(toyInMyOrder);
+            toyOnTheShelf.setStock(toyOnTheShelf.getStock() - 1);
+        }
+
+        // copy the toy and add it to the order
+
+    }
+
+    public double calculateOrder(int orderIndex) {
+        Order currentOrder = ALL_ORDERS[orderIndex];
+        return currentOrder.getTotalPrice();
     }
 }

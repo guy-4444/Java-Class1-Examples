@@ -6,18 +6,11 @@ public class Toy {
 
     private String name;
     private double price;
-    private int amount;
+    private int stock = 0;
 
     public Toy(Toy other) {
         this.name = other.name;
         this.price = other.price;
-        this.amount = other.amount;
-    }
-
-    public Toy(Toy other, int amount) {
-        this.name = other.name;
-        this.price = other.price;
-        this.amount = amount;
     }
 
     public Toy(String name, double price) {
@@ -25,8 +18,10 @@ public class Toy {
         this.price = price;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public Toy(String name, double price, int stock) {
+        this.name = name;
+        this.price = price;
+        this.stock = stock;
     }
 
     public String getName() {
@@ -37,8 +32,12 @@ public class Toy {
         return price;
     }
 
-    public int getAmount() {
-        return amount;
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 
     @Override
@@ -46,7 +45,6 @@ public class Toy {
         return "{" +
                 "name='" + name + '\'' +
                 ", price=" + price +
-                ", amount=" + amount +
                 '}';
     }
 }
