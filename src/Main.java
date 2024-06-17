@@ -1,3 +1,4 @@
+import shapes.ShapesMain;
 import toys.Exercise4;
 
 import java.util.Random;
@@ -7,7 +8,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-        Exercise6.start();
+        ShapesMain.start();
 
 
 
