@@ -5,6 +5,7 @@ import java.awt.*;
 public abstract class Shape {
 
     protected String color = "#FFFFFF";
+    protected int strokeWidth = 1;
 
     public Shape() {
     }
@@ -32,5 +33,15 @@ public abstract class Shape {
                 "color='" + color + '\'' +
                 ", perimeter='" + perimeter() +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (!(other instanceof  Shape)) {
+            return false;
+        }
+
+        Shape otherShape = (Shape) other;
+        return color.equals(otherShape.color)  &&  strokeWidth == otherShape.strokeWidth;
     }
 }

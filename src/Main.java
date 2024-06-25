@@ -1,4 +1,7 @@
+import exceptions.ExceptionMain;
+import exceptions.ExceptionMain2;
 import shapes.ShapesMain;
+import shapes.ShapesMain2;
 import toys.Exercise4;
 
 import java.util.Random;
@@ -8,10 +11,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-        ShapesMain.start();
-
-
+        ExceptionMain2.start();
     }
-
 
 }

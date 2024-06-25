@@ -40,4 +40,14 @@ public class Circle extends Shape {
                 ", area=" + area() +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object other) {
+        if (!(other instanceof  Circle)) {
+            return false;
+        }
+
+        Circle otherCircle = (Circle) other;
+        return super.equals(other)  &&  radius == otherCircle.radius;
+    }
 }
